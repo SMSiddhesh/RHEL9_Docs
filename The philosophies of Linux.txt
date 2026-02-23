@@ -1,0 +1,96 @@
+The philosophies of Linux are the basic ideas that guide how Linux is designed and how programs in Linux should work. These ideas originally came from the Unix world and influenced Linux development (started by Linus Torvalds).
+
+Here are the main Linux philosophies explained in simple words:
+
+1. Do one thing and do it well
+
+	Each program in Linux should focus on a single task and perform it very well.
+
+	Example:
+
+	grep → searches text
+
+	cp → copies files
+
+	mkdir → creates directories
+
+	Instead of one big program doing everything, Linux uses many small tools.
+
+2. Everything is a file
+
+	In Linux, many things are treated like files:
+
+	Devices
+	
+	Processes
+
+	Hardware
+
+	System information
+
+	Example:
+
+	Hard disks → /dev
+
+	System info → /proc
+
+	This makes it easier to manage the system.
+
+3. Small programs can work together
+
+	Linux tools are designed so they can combine with each other.
+
+	Example:
+
+		ps aux | grep ssh
+
+		Here:
+
+		ps shows processes
+	
+		grep filters results
+
+	This concept is called piping.
+
+4. Avoid unnecessary complexity
+
+	Linux tries to keep things:
+	Simple
+	Efficient
+	Lightweight
+
+	That’s why Linux works well on:
+	Servers
+	Cloud systems
+	Old hardware
+
+5. Use text files for configuration
+
+	Most Linux settings are stored in plain text configuration files.
+
+	Example:
+		/etc/ssh/sshd_config
+		/etc/fstab
+
+	This makes it easy to:
+	Edit
+	Automate
+	Troubleshoot
+
+6. Open and customizable
+
+	Linux encourages:
+	Open-source development
+	Customization
+	User control
+
+Users and developers can modify the system as needed.
+
+✅ In short (easy to remember):
+
+	1. Small tools
+	2. One task per program
+	3. Everything is a file
+	4. Programs work together
+	5. Keep it simple
+	6. Open and customizable
