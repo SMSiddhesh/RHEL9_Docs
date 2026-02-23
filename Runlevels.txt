@@ -1,0 +1,61 @@
+1] In Linux, runlevels are different modes in which the system can operate.
+	Each runlevel decides which services and processes should run.
+	Think of it like different startup modes of the system.
+
+2] Traditional Linux Runlevels
+
+	Older Linux systems (SysV init) used these runlevels:
+
+	Runlevel	Meaning	Simple explanation
+	0		Halt	System shutdown
+	1		Single-user mode	Maintenance / troubleshooting mode (only root user)
+	2		Multi-user (no network in some systems)	Multiple users but limited services
+	3		Multi-user mode (CLI)	Normal server mode with network, no GUI
+	4		Unused / custom	Rarely used
+	5		Multi-user with GUI	Desktop environment starts
+	6		Reboot	Restart the system
+
+	Easy way to remember
+	0 = Shutdown
+	1 = Repair / Maintenance
+	3 = Normal server mode (command line)
+	5 = Desktop mode (GUI)
+	6 = Reboot
+
+3] Modern Linux (RHEL 7, 8, 9, Ubuntu etc.)
+	Modern systems use targets instead of runlevels, managed by systemd.
+
+	They map like this:
+
+	Old Runlevel	systemd Target	    Meaning
+	0		poweroff.target	    Shutdown
+	1		rescue.target	    Single-user mode
+	3		multi-user.target   CLI mode
+	5		graphical.target    GUI mode
+	6		reboot.target	    Restart
+
+4]Example in Red Hat Enterprise Linux:
+
+	systemctl get-default
+
+	Change default runlevel (target):
+
+	systemctl set-default multi-user.target
+
+5]Simple real-life example
+
+	If you boot a server:
+
+	Runlevel 3 → Server starts with terminal only
+	Runlevel 5 → Server starts with GUI desktop
+	Runlevel 1 → Used to fix problems
+
+6]Boot process connection
+	Runlevels are applied after the kernel starts during boot:
+
+	Power On
+	→ Firmware
+	→ Bootloader
+	→ Kernel
+	→ systemd
+	→ Runlevel / Target starts
