@@ -1,0 +1,66 @@
+1. BIOS / UEFI starts the computer
+When you press the power button, the first thing that runs is firmware on the motherboard:
+BIOS or UEFI
+It checks hardware like RAM, CPU, disk (this is called POST – Power-On Self Test).
+Then it looks for a device that has an operating system (hard disk, SSD, USB).
+
+➡ In simple words:
+Computer checks hardware and looks for the OS to start.
+
+2. Bootloader loads
+After finding the OS, the system loads a bootloader.
+Most Linux systems use GRUB.
+
+What GRUB does:
+Shows the OS selection menu.
+Lets you choose which kernel to boot.
+Loads the Linux kernel into memory.
+
+➡ Simple idea:
+GRUB is like a menu that starts Linux.
+
+3. Linux Kernel starts	
+Next, the Linux kernel loads.
+The kernel:
+Controls CPU, memory, and hardware.
+Mounts the root filesystem (/).
+Starts essential system processes.
+
+➡ Simple idea:
+Kernel is the brain of Linux that manages everything.
+
+4. init / systemd starts system services	
+After the kernel loads, it starts the first process called init system.
+Modern Linux (RHEL, Ubuntu, etc.) uses systemd.
+
+systemd:
+Starts background services (daemons)
+Mounts drives
+Starts networking
+Prepares the system for login
+
+➡ Simple idea:
+systemd starts all the services needed for the system to work.
+
+5. Login screen / terminal appears
+Finally:
+A login screen (GUI) or
+A terminal login prompt appears.
+Now the system is ready for the user.
+
+➡ Simple idea:
+Linux is fully started and ready to use.
+
+✅ Short Summary (Easy to Remember)
+
+Power On
+   ↓
+BIOS / UEFI
+   ↓
+GRUB Bootloader
+   ↓
+Linux Kernel
+   ↓
+systemd (services start)
+   ↓
+Login Screen
