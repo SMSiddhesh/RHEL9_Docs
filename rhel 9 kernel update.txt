@@ -1,0 +1,109 @@
+1] [root@rhel9 kernel-update]# wget https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-5.14.0-611.16.1.el9_7.x86_64.rpm
+--2026-02-24 02:11:58--  https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-5.14.0-611.16.1.el9_7.x86_64.rpm
+Resolving repo.almalinux.org (repo.almalinux.org)... 151.101.131.52, 151.101.67.52, 151.101.195.52, ...
+Connecting to repo.almalinux.org (repo.almalinux.org)|151.101.131.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1143985 (1.1M) [application/x-redhat-package-manager]
+Saving to: ‘kernel-5.14.0-611.16.1.el9_7.x86_64.rpm’
+
+kernel-5.14.0-611.1 100%[===================>]   1.09M   864KB/s    in 1.3s    
+
+2026-02-24 02:12:01 (864 KB/s) - ‘kernel-5.14.0-611.16.1.el9_7.x86_64.rpm’ saved [1143985/1143985]
+
+2] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# wget https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+--2026-02-24 02:12:52--  https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+Resolving repo.almalinux.org (repo.almalinux.org)... 151.101.195.52, 151.101.3.52, 151.101.131.52, ...
+Connecting to repo.almalinux.org (repo.almalinux.org)|151.101.195.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 18214521 (17M) [application/x-redhat-package-manager]
+Saving to: ‘kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm’
+
+kernel-core-5.14.0- 100%[===================>]  17.37M  5.26MB/s    in 3.8s    
+
+2026-02-24 02:12:57 (4.56 MB/s) - ‘kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm’ saved [18214521/18214521]
+
+3] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# wget https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-5.14.0-611.16.1.el9_7.x86_64.rpm
+--2026-02-24 02:13:11--  https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-5.14.0-611.16.1.el9_7.x86_64.rpm
+Resolving repo.almalinux.org (repo.almalinux.org)... 151.101.3.52, 151.101.67.52, 151.101.131.52, ...
+Connecting to repo.almalinux.org (repo.almalinux.org)|151.101.3.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 41461129 (40M) [application/x-redhat-package-manager]
+Saving to: ‘kernel-modules-5.14.0-611.16.1.el9_7.x86_64.rpm’
+
+kernel-modules-5.14 100%[===================>]  39.54M  3.95MB/s    in 9.7s    
+
+2026-02-24 02:13:22 (4.08 MB/s) - ‘kernel-modules-5.14.0-611.16.1.el9_7.x86_64.rpm’ saved [41461129/41461129]
+
+4] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# wget https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64.rpm
+--2026-02-24 02:13:36--  https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64.rpm
+Resolving repo.almalinux.org (repo.almalinux.org)... 151.101.195.52, 151.101.131.52, 151.101.67.52, ...
+Connecting to repo.almalinux.org (repo.almalinux.org)|151.101.195.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1577537 (1.5M) [application/x-redhat-package-manager]
+Saving to: ‘kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64.rpm’
+
+kernel-modules-extr 100%[===================>]   1.50M  1.15MB/s    in 1.3s    
+
+2026-02-24 02:13:39 (1.15 MB/s) - ‘kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64.rpm’ saved [1577537/1577537]
+
+
+
+5] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# wget https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+--2026-02-24 02:15:57--  https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+Resolving repo.almalinux.org (repo.almalinux.org)... 151.101.67.52, 151.101.195.52, 151.101.3.52, ...
+Connecting to repo.almalinux.org (repo.almalinux.org)|151.101.67.52|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 32129065 (31M) [application/x-redhat-package-manager]
+Saving to: ‘kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64.rpm’
+
+kernel-modules-core 100%[===================>]  30.64M  5.74MB/s    in 6.3s    
+
+2026-02-24 02:16:04 (4.86 MB/s) - ‘kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64.rpm’ saved [32129065/32129065]
+
+6] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# ls
+kernel-5.14.0-611.16.1.el9_7.x86_64.rpm
+kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+kernel-modules-5.14.0-611.16.1.el9_7.x86_64.rpm
+kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64.rpm
+kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64.rpm
+[root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# rpm -ivh kernel-core-*.rpm kernel-modules-*.rpm kernel-modules-extra-*.rpm kernel-*.rpm
+warning: kernel-core-5.14.0-611.16.1.el9_7.x86_64.rpm: Header V4 RSA/SHA256 Signature, key ID b86b3716: NOKEY
+warning: package kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64 was already added, skipping kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64
+warning: package kernel-core-5.14.0-611.16.1.el9_7.x86_64 was already added, skipping kernel-core-5.14.0-611.16.1.el9_7.x86_64
+warning: package kernel-modules-5.14.0-611.16.1.el9_7.x86_64 was already added, skipping kernel-modules-5.14.0-611.16.1.el9_7.x86_64
+warning: package kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64 was already added, skipping kernel-modules-core-5.14.0-611.16.1.el9_7.x86_64
+warning: package kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64 was already added, skipping kernel-modules-extra-5.14.0-611.16.1.el9_7.x86_64
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:kernel-modules-core-5.14.0-611.16################################# [ 20%]
+   2:kernel-core-5.14.0-611.16.1.el9_7################################# [ 40%]
+   3:kernel-modules-5.14.0-611.16.1.el################################# [ 60%]
+   4:kernel-modules-extra-5.14.0-611.1################################# [ 80%]
+   5:kernel-5.14.0-611.16.1.el9_7     ################################# [100%]
+dracut: Disabling early microcode, because kernel does not support it. CONFIG_MICROCODE_[AMD|INTEL]!=y
+
+7] [root@rhel9 kernel-update]# 
+[root@rhel9 kernel-update]# ls /boot/
+config-5.14.0-284.11.1.el9_2.x86_64
+config-5.14.0-611.16.1.el9_7.x86_64
+efi
+grub2
+initramfs-0-rescue-4b56db995dd9469d86225e2b822a04ea.img
+initramfs-5.14.0-284.11.1.el9_2.x86_64.img
+initramfs-5.14.0-284.11.1.el9_2.x86_64kdump.img
+initramfs-5.14.0-611.16.1.el9_7.x86_64.img                  ##new kernel##
+loader
+symvers-5.14.0-284.11.1.el9_2.x86_64.gz
+symvers-5.14.0-611.16.1.el9_7.x86_64.gz
+System.map-5.14.0-284.11.1.el9_2.x86_64
+System.map-5.14.0-611.16.1.el9_7.x86_64
+vmlinuz-0-rescue-4b56db995dd9469d86225e2b822a04ea
+vmlinuz-5.14.0-284.11.1.el9_2.x86_64
+vmlinuz-5.14.0-611.16.1.el9_7.x86_64
