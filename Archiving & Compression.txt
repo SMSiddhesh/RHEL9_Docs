@@ -146,7 +146,7 @@ Archive + Compression
 10. Compress Single File (Without tar)
 
 	Sometimes you want to compress just one file.
-	Using gzip:
+	1)Using gzip:
 	Compress:	
 		gzip file.txt
 	Output:
@@ -154,6 +154,12 @@ Archive + Compression
 
 	Uncompress:
 		gunzip file.txt.gz
+
+	2)Using bzip2 Command
+    Compress:
+		bzip2 file.txt
+	Decompress:
+		bunzip2 file.txt.bz2
 
 11. Real Life Example (Linux Admin Work)
 
@@ -197,4 +203,5 @@ Archive + Compression
         Compression
        		↓
 	   backup.tar.gz
+
 
