@@ -14,23 +14,15 @@
 	Instead of sending 50 files separately, Linux can combine them into one archive file.
 
 Example archive:
-
-backup.tar
-
-This makes:
-
-Backup easy
-
-Transfer easy
-
-Storage organized
+	backup.tar
+	This makes:
+		Backup easy
+		Transfer easy
+		Storage organized
 
 The command used for archiving is:
-
-tar
-
-tar means:
-Tape Archive
+	tar
+tar means: Tape Archive
 
 2. What is Compression?
 
@@ -204,4 +196,5 @@ Archive + Compression
        		↓
        	   Compression
        		↓
+
 	  backup.tar.gz
