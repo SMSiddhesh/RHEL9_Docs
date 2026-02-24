@@ -1,0 +1,207 @@
+***Archiving & Compression***
+
+1. What is Archiving?
+
+	Archiving means: Combining many files and folders into one single file.
+
+	Example:
+		You have 50 files in a folder:
+		file1
+		file2
+		file3
+		...
+		file50
+	Instead of sending 50 files separately, Linux can combine them into one archive file.
+
+Example archive:
+
+backup.tar
+
+This makes:
+
+Backup easy
+
+Transfer easy
+
+Storage organized
+
+The command used for archiving is:
+
+tar
+
+tar means:
+Tape Archive
+
+2. What is Compression?
+
+	Compression means: Reducing the size of a file.
+	Example:
+		A file size:
+		100 MB
+		After compression:
+		20 MB
+
+	So it saves:
+		Disk space
+		Network bandwidth
+		Backup time
+
+3. Difference Between Archiving and Compression
+
+	Many students confuse this, so remember this simple table:
+
+		Archiving	Compression
+		Combines files	Reduces file size
+		Uses tar	Uses gzip, bzip2, xz
+		Creates .tar	Creates .gz, .bz2, .xz
+
+	Example:
+		tar → combine files
+		gzip → reduce size
+
+Usually Linux does both together.
+Example:
+backup.tar.gz
+
+This means:
+Archive + Compression
+
+4. tar Command (Most Important)
+
+	This is the main command used in Linux backup.
+	Basic format:
+		tar [options] filename directory
+
+5. Creating an Archive
+
+	Example:
+		tar -cvf backup.tar /etc
+
+	Meaning:
+
+		Option	Meaning
+		c	create archive
+		v	show files being added
+		f	file name
+
+		Result:
+		backup.tar created
+
+6. Extracting an Archive
+
+	To open or extract:
+		tar -xvf backup.tar
+
+	Options:
+
+		Option	Meaning
+		x	extract
+		v	show files
+		f	file
+
+7. Viewing Archive Content (Without Extracting)
+
+	Sometimes you only want to check what is inside the archive.
+
+	Command:
+		tar -tvf backup.tar
+		t = list files
+
+8. Compression Types in Linux
+
+	Linux mainly uses 3 compression methods.
+
+		1) gzip (Most Common)
+			File extension: .gz
+			Create compressed archive:
+
+			tar -czvf backup.tar.gz /etc
+			Meaning:
+
+			Option	Meaning
+			z	gzip compression
+
+		Extract:
+		tar -xzvf backup.tar.gz
+		
+		2) bzip2	
+			Better compression than gzip.
+		Extension:
+			.bz2
+		Create:	
+			tar -cjvf backup.tar.bz2 /etc
+
+		Extract:
+			tar -xjvf backup.tar.bz2
+
+		3) xz (Best Compression)
+		Highest compression.
+		Extension:
+			.xz
+		Create:
+			tar -cJvf backup.tar.xz /etc
+		Extract:
+			tar -xJvf backup.tar.xz
+
+9. Extract Files to Another Location
+
+	Example:
+		tar -xzvf backup.tar.gz -C /tmp
+
+	Meaning:
+		Extract files inside /tmp.
+
+10. Compress Single File (Without tar)
+
+	Sometimes you want to compress just one file.
+	Using gzip:
+	Compress:	
+		gzip file.txt
+	Output:
+		file.txt.gz
+
+	Uncompress:
+		gunzip file.txt.gz
+
+11. Real Life Example (Linux Admin Work)
+
+	Daily backup of /etc directory:
+		tar -czvf etc-backup.tar.gz /etc
+	Store it in backup location:
+		/backup/etc-backup.tar.gz
+
+12. Most Important tar Options (Very Important)
+
+	You should remember these:
+
+		Option	Meaning
+		c	create
+		x	extract
+		v	show progress
+		f	file name
+		z	gzip
+		j	bzip2
+		J	xz
+		t	list files
+
+13. Simple Way to Remember
+
+	Most used command in Linux:
+	Create backup:
+		tar -czvf backup.tar.gz foldername
+	Extract backup:
+		tar -xzvf backup.tar.gz
+
+14. Simple Diagram
+
+	Think like this:
+
+	  Files + Folders
+       		↓
+     	       tar
+     		↓
+    	   Archive file
+       		↓
+       	   Compression
+       		↓
+	  backup.tar.gz
