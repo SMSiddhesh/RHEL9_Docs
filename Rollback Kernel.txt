@@ -1,0 +1,9 @@
+***COMMANDS TO KERNEL ROLLBACK***
+
+	rpm -qa | grep kernel
+	vi /etc/default/grub
+	GRUB_DEFAULT=1
+	grub2-mkconfig -o /boot/grub2/grub.cfg
+	reboot
+	uname -r
+
