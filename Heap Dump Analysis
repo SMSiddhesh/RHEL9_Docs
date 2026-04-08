@@ -1,0 +1,29 @@
+1. Identify the Classic Symptom (Application Crashes):** A high memory issue usually presents itself when an application (like an Oracle database or a web server) runs for a few minutes or hours and then randomly crashes or shuts down. 
+
+2. Verify High Swap Utilization: To confirm it is a RAM issue and not a CPU issue, check your Swap memory utilization using the `free -m` or `top` command. If your Swap is extremely high (e.g., 80-90% full), it indicates your system has run out of physical RAM.
+
+3. Find the Culprit Process: Run the `top` command, but instead of sorting by CPU, press `Shift + M`. This will sort all running processes based on their memory consumption, allowing you to see what is eating up the RAM.
+
+4. Extract the PID and Owner: From the sorted list, identify the Process ID (PID) consuming the most memory (e.g., Java) and identify the specific application team that owns it.
+
+5. Request an Application Restart: Contact the application owner or team and request them to restart the application as a first step to see if it clears the immediate memory bottleneck.
+
+6. Check the Known Error Database (KEDB): If the memory spike continues after the restart, check your organization's KEDB for past occurrences or known bugs related to this specific application.
+
+7. Escalate to the Team Lead: If no KEDB solution works, trigger your escalation matrix and inform your Team Lead that the standard fixes have failed.
+
+8. Shift from Thread Dump to Heap Dump: While high CPU issues require a Thread Dump, high memory utilization requires a Heap Dump Analysis. This is the critical step that changes when troubleshooting memory versus CPU.
+
+9. Use the Correct Command: Inform the developers that they need to generate the heap dump. For Java applications, the command used to take this dump is `jmap` (as opposed to `jstack` which is used for thread dumps).
+
+10. Do Not Run the Dump Yourself: As a system administrator, you must **never execute the heap dump command yourself. The process can suspend the application, generate massive files (up to 50GB), and potentially hang the entire server, so it must be done by the application team during an agreed-upon window.
+
+11. Search for GC (Garbage Collector) Behavior: The primary goal of analyzing the heap dump file is to evaluate how the application's Garbage Collector is behaving. 
+
+12. Identify the "Incremental Curve": A healthy application has a "sawtooth" memory pattern (memory goes up when "heaping" and goes down when "cleaning"). If the heap dump reveals an incremental curve (memory usage constantly rises and never drops), it confirms a severe "Memory Leak".
+
+13. Utilize Profilers: Once the heap dump is generated, developers will use specialized tools called Profilers to inspect the 50GB file. This allows them to find the exact block of code where the developer forgot to write the Garbage Cleaner code.
+
+14. Apply Temporary Mitigation (Cushioning): While the developers are analyzing the heap dump and fixing the code, you might add more physical RAM to the server. However, this will only act as a temporary cushion to delay the OOM (Out of Memory) Killer from crashing the app; it will not stop the leak.
+
+15. Deploy a Permanent Software Patch: The issue can only be permanently closed once the application team rewrites the code to include the missing Garbage Collector instructions, and releases a new software update or patch to stop the memory leak.
