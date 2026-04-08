@@ -1,0 +1,29 @@
+1. Use the `top` command to identify the overarching process (PID) that is causing high CPU utilization, such as an application consuming 99% of the CPU.
+
+2. Drill down inside that specific process to isolate the exact Thread ID (TID) that is misbehaving and wasting the majority of the resources, such as finding a single thread using 91% of the CPU while others use minimal amounts.
+
+3. Recognize the target environment; 95% of enterprise applications run on Java, whereas languages like Python are typically used for automation and scripting.
+
+4. Prepare to take a "thread dump," which provides a snapshot of the current state of the running Java process to help diagnose abnormally high CPU utilization.
+
+5. Execute the `jstack` command in Linux to generate the thread dump for the problematic Java process.
+
+6. Redirect the output of the `jstack` command into a specific file so you can easily analyze the static information and share it via email, rather than trying to read rapidly changing data directly in RAM.
+
+7. Take the specific misbehaving Thread ID (TID) you found earlier and convert it from a decimal number into a hexadecimal number.
+
+8. Open your generated thread dump file and search for that specific hexadecimal number to locate the exact thread creating the issue.
+
+9. Analyze the status of the thread in the dump to determine what is going wrong, such as checking if it is "runnable," "sleeping," or experiencing "contention" (which means threads are fighting for resources).
+
+10. Identify the exact piece of code from the thread dump and send it to the Java developer team so they can attempt to fix the problem.
+
+11. If the system administrator and the developer are unable to solve the issue, escalate the problem by opening a "bridge call" with senior staff, including the application owner, OS head, and network head.
+
+12. During the bridge call, the senior team will review the command history, system and application logs, and the specific thread dump files.
+
+13. The team will utilize advanced tools called "profilers" to deeply analyze the application and find the exact reason for the failure.
+
+14. If the profiler tools still do not lead to a fix, mark the issue as an "open case" and escalate it directly to the software vendor, such as Oracle for Java issues.
+
+15. Conclude the Root Cause Analysis (RCA) when the fundamental software bug is identified, which is often a logical or mathematical error in the code, such as dividing by zero and causing an infinite loop.
