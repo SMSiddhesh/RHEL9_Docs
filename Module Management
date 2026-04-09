@@ -1,0 +1,36 @@
+Here are all the key points covered, categorized by topic:
+
+1. The Linux Kernel and Its 5 Primary Functions
+The kernel is a collection of basic I/O modules and is responsible for managing the system's core operations. Its five main jobs are:
+* Hardware Detection: The kernel's first job is to detect connected hardware. If hardware is too new for an old kernel, it won't be supported.
+* Loading Modules/Drivers: It loads the necessary modules into RAM and configures device files.
+* Resource Management (Scheduler): Operating under PID 0, it allocates time and resources for the CPU, RAM, Disk, and Network.
+* Security Management: It handles permissions, firewalls, and SELinux.
+* Foreign File Systems Support: It allows Linux to interact with foreign devices and file systems (like Windows' NTFS), provided the correct modules are installed. 
+
+2. Hardware Compatibility List (HCL) and Blacklisting
+* HCL (Hardware Compatibility List): For hardware to work smoothly without crashing the kernel, it must be validated on the HCL. You can check if hardware is compatible using the `journalctl` command. 
+* Blacklisted Hardware: If a specific hardware component is known to be faulty or unstable, the kernel "blacklists" it and will refuse to create a device file for it to protect the system.
+
+3. Module (Driver) Management
+The session extensively covered how drivers are stored, loaded, and managed:
+* Storage Location: Hardware drivers are permanently saved on the hard disk at `/lib/modules/<kernel-version>/kernel/drivers`. 
+* Kernel Objects (.ko): Driver files use the `.ko` extension, which stands for "Kernel Object," indicating they attach to the kernel.
+* Key Commands:
+    *   `lsmod`: Lists all drivers currently loaded into the RAM, showing their size and how many devices are using them.
+    *   `modprobe <module_name>`: Manually loads a driver into the system.
+    *   `modinfo <module_name>`: Shows detailed information and file paths for a specific driver.
+    *   `modprobe -r <module_name>` or `rmmod <module_name>`: Removes or unloads a driver.
+*   Live Logs: You can monitor live hardware detection (such as plugging in a USB) using `dmesg` or `journalctl -f`.
+
+4. Troubleshooting Module Dependencies
+* The "In Use" Error: If you try to remove a driver (like `usb_storage` or `cdrom`) and the system says it is "in use," you cannot remove it directly .
+* The Fix: You must logically identify the dependent module that is locking the driver and remove that first. For example, removing `uas` before `usb_storage`, or removing `sr_mod` before the `cdrom` driver.
+
+5. Storage (SAN) and General Troubleshooting Fundamentals
+* Troubleshooting Hierarchy: If a file is missing or corrupted, troubleshooting should follow a logical path: File -> Directory -> File System -> LVM -> Disk . Corrupted configuration files can be repaired using RPM commands.
+* SAN Zoning & Failures: Zoning connects disk arrays to servers [31]. If a path to the disk fails, **Dynamic Multipathing (DMP)** software automatically routes the traffic through an alternative path to prevent outages.
+
+6. Career and Training Philosophy
+*   Fundamentals First: Companies value a strong foundation in underlying technologies (Linux, Networking, IP routing, Storage, Backups) much more than surface-level exposure to advanced tools without knowing how they work under the hood. 
+*   Hands-on Server Setup: Upcoming exercises involve building and troubleshooting 15 to 20 different servers (Web server, DNS, DHCP, Database, etc.) to simulate realistic production issues like missing packages or full disks.
